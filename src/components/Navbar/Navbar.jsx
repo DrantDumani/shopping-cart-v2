@@ -6,9 +6,7 @@ function Navbar({ amount }) {
     <nav className="navBar">
       <ul className="navList">
         <li>
-          <Link to="/">
-            <h1>Shellendorf Antiques</h1>
-          </Link>
+          <Link to="/">Shellendorf Antiques</Link>
         </li>
         <li>
           <NavLink to="/shop">Shop</NavLink>
