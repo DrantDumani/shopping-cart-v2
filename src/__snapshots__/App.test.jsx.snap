@@ -2,8 +2,67 @@
 
 exports[`Homepage > renders navbar, footer, and root route 1`] = `
 <div>
-  <h1>
-    Hello world
-  </h1>
+  <header
+    class="header"
+  >
+    <nav
+      class="navBar"
+    >
+      <ul
+        class="navList"
+      >
+        <li>
+          <a
+            href="/"
+          >
+            Shellendorf Antiques
+          </a>
+        </li>
+        <li>
+          <a
+            class=""
+            href="/shop"
+          >
+            Shop
+          </a>
+        </li>
+        <li>
+          <a
+            class=""
+            href="/cart"
+          >
+            Cart: 
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main
+    class="main"
+  />
+  <footer
+    class="footer"
+  >
+    <p>
+      Created by Darnell. 
+      <a
+        href="#"
+      >
+        Github repo
+      </a>
+    </p>
+    <p>
+      Font and homepage image are property of Nintendo.
+    </p>
+    <p>
+      Built using React Router and
+       
+      <a
+        href="https://fakestoreapi.com/"
+      >
+        Fakestore API
+      </a>
+    </p>
+  </footer>
 </div>
 `;
