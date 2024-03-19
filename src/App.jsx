@@ -1,11 +1,28 @@
 import { Outlet } from "react-router";
 import Navbar from "./components/Navbar/Navbar";
+import { useState } from "react";
 
 function App() {
+  const [cart, setCart] = useState([]);
+
+  const itemAmount = cart.reduce((total, el) => total + el.quantity, 0);
+  const priceTotal = cart.reduce(
+    (total, el) => total + el.price * el.quantity,
+    0
+  );
+
+  const addToKart = (obj, num) => {
+    const newItem = { ...obj, quantity: num };
+    setCart((c) => c.concat(newItem));
+  };
+
+  const removeItem = (id) => {
+    setCart((c) => c.filter((item) => item.id !== id));
+  };
   return (
     <>
       <header className="header">
-        <Navbar />
+        <Navbar amount={itemAmount} />
       </header>
 
       <main className="main">
