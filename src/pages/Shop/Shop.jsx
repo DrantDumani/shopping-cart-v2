@@ -14,7 +14,7 @@ function Shop() {
   return (
     <>
       {inventory.map((item) => (
-        <Link key={item.id} to={`/${item.id}`}>
+        <Link key={item.id} to={`/shop/${item.id}`}>
           <ItemCard
             key={item.id}
             name={item.title}

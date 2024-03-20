@@ -11,7 +11,7 @@ function App() {
     0
   );
 
-  const addToKart = (obj, num) => {
+  const addToCart = (obj, num) => {
     const newItem = { ...obj, quantity: num };
     setCart((c) => c.concat(newItem));
   };
@@ -26,7 +26,7 @@ function App() {
       </header>
 
       <main className="main">
-        <Outlet />
+        <Outlet context={{ addToCart }} />
       </main>
 
       <footer className="footer">
