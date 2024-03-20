@@ -2,6 +2,8 @@ import { useState } from "react";
 import { useLoaderData, useOutletContext } from "react-router";
 import ItemAmount from "../../components/ItemAmount/ItemAmount";
 import CartModal from "../../components/CartModal/CartModal";
+import ModalWrapper from "../../components/ModalWrapper/ModalWrapper";
+import useModal from "../../hooks/useModal";
 
 export const loader = async ({ params }) => {
   const resp = await fetch(
@@ -14,8 +16,9 @@ export const loader = async ({ params }) => {
 
 function ItemDescription() {
   const [quantity, setQuantity] = useState(1);
-  const [showModal, setShowModal] = useState(false);
   const { addToCart } = useOutletContext();
+  const [showModal, setShowModal] = useModal();
+
   const incQuantity = () => setQuantity((q) => q + 1);
   const decQuantity = () =>
     setQuantity((q) => {
@@ -26,7 +29,7 @@ function ItemDescription() {
   const itemData = useLoaderData();
   const handleClick = () => {
     addToCart(itemData, quantity);
-    setShowModal(!showModal);
+    setShowModal();
   };
 
   return (
@@ -43,10 +46,9 @@ function ItemDescription() {
       />
       <button onClick={handleClick}>Add to Cart</button>
       {showModal && (
-        <CartModal
-          toggleModal={() => setShowModal(false)}
-          itemName={itemData.title}
-        />
+        <ModalWrapper toggleModal={setShowModal}>
+          <CartModal itemName={itemData.title} />
+        </ModalWrapper>
       )}
     </div>
   );
