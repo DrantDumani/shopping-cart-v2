@@ -19,11 +19,10 @@ function ItemDescription() {
   const { addToCart } = useOutletContext();
   const [showModal, setShowModal] = useModal();
 
-  const incQuantity = () => setQuantity((q) => q + 1);
-  const decQuantity = () =>
+  const changeQuantity = (num = 1) =>
     setQuantity((q) => {
-      if (q === 1) return q;
-      return q - 1;
+      if (num < 0 && q === 1) return q;
+      else return q + num;
     });
 
   const itemData = useLoaderData();
@@ -39,11 +38,7 @@ function ItemDescription() {
       <p>{itemData.description}</p>
       <p>{`$${itemData.price.toFixed(2)}`}</p>
 
-      <ItemAmount
-        amount={quantity}
-        plusHandler={incQuantity}
-        minusHandler={decQuantity}
-      />
+      <ItemAmount amount={quantity} changeQuantity={changeQuantity} />
       <button onClick={handleClick}>Add to Cart</button>
       {showModal && (
         <ModalWrapper toggleModal={setShowModal}>

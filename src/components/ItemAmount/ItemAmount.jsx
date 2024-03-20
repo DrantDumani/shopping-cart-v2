@@ -1,18 +1,17 @@
 import PropTypes from "prop-types";
 
-function ItemAmount({ plusHandler, minusHandler, amount }) {
+function ItemAmount({ changeQuantity, amount }) {
   return (
     <div>
-      <button onClick={minusHandler}>-</button>
+      <button onClick={() => changeQuantity(-1)}>-</button>
       <p>{amount}</p>
-      <button onClick={plusHandler}>+</button>
+      <button onClick={() => changeQuantity(1)}>+</button>
     </div>
   );
 }
 
 ItemAmount.propTypes = {
-  plusHandler: PropTypes.func,
-  minusHandler: PropTypes.func,
+  changeQuantity: PropTypes.func,
   amount: PropTypes.number,
 };
 
