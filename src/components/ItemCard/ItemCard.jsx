@@ -5,7 +5,7 @@ function ItemCard({ name, imgLink, price }) {
     <div>
       <img src={imgLink} alt="" />
       <h3>{name}</h3>
-      <p>{price}</p>
+      <p>${price.toFixed(2)}</p>
     </div>
   );
 }
