@@ -6,14 +6,22 @@ function App() {
   const [cart, setCart] = useState([]);
 
   const itemAmount = cart.reduce((total, el) => total + el.quantity, 0);
-  const priceTotal = cart.reduce(
-    (total, el) => total + el.price * el.quantity,
-    0
-  );
 
   const addToCart = (obj, num) => {
     const newItem = { ...obj, quantity: num };
     setCart((c) => c.concat(newItem));
+  };
+
+  const changeCartQuantity = (id, num = 1) => {
+    setCart((c) => {
+      let newCart = [...c];
+      const itemIndex = newCart.findIndex((item) => item.id === id);
+      const targetItem = newCart[itemIndex];
+      const newItem = { ...targetItem, quantity: targetItem.quantity + num };
+      if (newItem.quantity === 0) newCart = newCart.filter((i) => i.id !== id);
+      else newCart[itemIndex] = newItem;
+      return newCart;
+    });
   };
 
   const removeItem = (id) => {
@@ -26,7 +34,14 @@ function App() {
       </header>
 
       <main className="main">
-        <Outlet context={{ addToCart }} />
+        <Outlet
+          context={{
+            addToCart,
+            removeItem,
+            changeCartQuantity,
+            cart,
+          }}
+        />
       </main>
 
       <footer className="footer">
