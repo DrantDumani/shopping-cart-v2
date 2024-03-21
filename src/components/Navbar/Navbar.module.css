@@ -1,0 +1,43 @@
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 0.5rem;
+}
+
+.listItemBig {
+  width: 100%;
+  text-align: center;
+}
+
+.linkBig {
+  font-size: 1.5rem;
+}
+
+.listItemSmall {
+  width: 100%;
+}
+
+.nestedList {
+  display: flex;
+}
+
+.nestedListItem {
+  flex-basis: 50%;
+  text-align: center;
+  padding-bottom: 1rem;
+}
+
+.navLink {
+  font-size: 1.125rem;
+}
+
+.navLink:hover {
+  font-weight: 600;
+  border-bottom: 0.25rem solid #f7f7f7;
+}
+
+.active {
+  composes: navLink;
+  font-weight: 600;
+  border-bottom: 0.25rem solid #f7f7f7;
+}
