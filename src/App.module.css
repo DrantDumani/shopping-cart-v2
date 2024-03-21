@@ -1,0 +1,21 @@
+.wrapper {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.headerWrapper {
+  composes: wrapper;
+  background-color: #3b3b3b;
+  color: #f7f7f7;
+}
+
+.mainWrapper {
+  composes: wrapper;
+  background-color: #ededed;
+  flex-grow: 1;
+}
+
+.footerWrapper {
+  composes: headerWrapper;
+  margin-top: auto;
+}

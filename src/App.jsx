@@ -1,6 +1,7 @@
 import { Outlet } from "react-router";
 import Navbar from "./components/Navbar/Navbar";
 import { useState } from "react";
+import styles from "./App.module.css";
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -29,31 +30,37 @@ function App() {
   };
   return (
     <>
-      <header className="header">
-        <Navbar amount={itemAmount} />
-      </header>
+      <div>
+        <header className={styles.headerWrapper}>
+          <Navbar amount={itemAmount} />
+        </header>
+      </div>
 
-      <main className="main">
-        <Outlet
-          context={{
-            addToCart,
-            removeItem,
-            changeCartQuantity,
-            cart,
-          }}
-        />
-      </main>
+      <div className={styles.mainWrapper}>
+        <main className="main">
+          <Outlet
+            context={{
+              addToCart,
+              removeItem,
+              changeCartQuantity,
+              cart,
+            }}
+          />
+        </main>
+      </div>
 
-      <footer className="footer">
-        <p>
-          Created by Darnell. <a href="#">Github repo</a>
-        </p>
-        <p>Font and homepage image are property of Nintendo.</p>
-        <p>
-          Built using React Router and{" "}
-          <a href="https://fakestoreapi.com/">Fakestore API</a>
-        </p>
-      </footer>
+      <div className={styles.footerWrapper}>
+        <footer>
+          <p>
+            Created by Darnell. <a href="#">Github repo</a>
+          </p>
+          <p>Font and homepage image are property of Nintendo.</p>
+          <p>
+            Built using React Router and{" "}
+            <a href="https://fakestoreapi.com/">Fakestore API</a>
+          </p>
+        </footer>
+      </div>
     </>
   );
 }

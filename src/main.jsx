@@ -8,6 +8,7 @@ import Cart from "./pages/Cart/Cart.jsx";
 import ItemDescription, {
   loader as itemLoader,
 } from "./pages/ItemDescription/ItemDescription.jsx";
+import "./index.css";
 
 const router = createBrowserRouter([
   {
