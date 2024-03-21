@@ -11,11 +11,49 @@
 
 .mainWrapper {
   composes: wrapper;
-  background-color: #ededed;
+  --overlay: #edededdb;
+  display: flex;
   flex-grow: 1;
+  background: linear-gradient(0deg, var(--overlay), var(--overlay)),
+    url("./assets/images/S2_Stage_Shellendorf_Institute.webp") top center;
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .footerWrapper {
   composes: headerWrapper;
   margin-top: auto;
+}
+
+.footer {
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.footer a {
+  --link-color: #00ccd3;
+  --link-hover: #00ecf4;
+  color: var(--link-color);
+}
+
+.footer a:hover {
+  color: var(--link-hover);
+}
+
+.footer svg {
+  width: 1.25rem;
+  transition: transform 0.4s ease-in;
+  vertical-align: sub;
+}
+
+.footer svg:hover {
+  transform: rotate(360deg);
+}
+
+.footer svg path {
+  fill: var(--link-color);
 }

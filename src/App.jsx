@@ -2,6 +2,7 @@ import { Outlet } from "react-router";
 import Navbar from "./components/Navbar/Navbar";
 import { useState } from "react";
 import styles from "./App.module.css";
+import Icon from "./assets/images/githubIcon.svg?react";
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -37,7 +38,7 @@ function App() {
       </div>
 
       <div className={styles.mainWrapper}>
-        <main className="main">
+        <main className={styles.main}>
           <Outlet
             context={{
               addToCart,
@@ -50,15 +51,18 @@ function App() {
       </div>
 
       <div className={styles.footerWrapper}>
-        <footer>
+        <footer className={styles.footer}>
           <p>
-            Created by Darnell. <a href="#">Github repo</a>
+            Created by Darnell.{" "}
+            <a href="#">
+              Github repo <Icon />
+            </a>
           </p>
-          <p>Font and homepage image are property of Nintendo.</p>
           <p>
             Built using React Router and{" "}
             <a href="https://fakestoreapi.com/">Fakestore API</a>
           </p>
+          <p>Font and homepage image are property of Nintendo.</p>
         </footer>
       </div>
     </>

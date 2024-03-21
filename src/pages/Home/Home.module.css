@@ -1,0 +1,19 @@
+.homepage {
+  height: 100%;
+}
+
+.title {
+  font-size: 1.75rem;
+  padding-top: 1rem;
+  padding-bottom: 2.25rem;
+}
+
+.ctaBtn {
+  background-color: #67faff;
+  padding: 0.3125rem;
+  border: 1px solid #000;
+  border-radius: 0.25rem;
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+}
