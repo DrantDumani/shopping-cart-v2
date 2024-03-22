@@ -16,11 +16,14 @@
   flex-grow: 1;
   background: linear-gradient(0deg, var(--overlay), var(--overlay)),
     url("./assets/images/S2_Stage_Shellendorf_Institute.webp") top center;
+  background-size: cover;
 }
 
 .main {
   width: 100%;
   padding-bottom: 1.75rem;
+  max-width: 62.5rem;
+  margin: 0 auto;
 }
 
 .footerWrapper {
@@ -31,6 +34,8 @@
 .footer {
   text-align: center;
   padding: 1rem 0;
+  max-width: 62.5rem;
+  margin: 0 auto;
 }
 
 .footer a {
@@ -55,4 +60,17 @@
 
 .footer svg path {
   fill: var(--link-color);
+}
+
+@media (min-width: 768px) {
+  .wrapper {
+    padding-left: 2.75rem;
+    padding-right: 2.75rem;
+  }
+
+  .mainWrapper {
+    background: linear-gradient(0deg, var(--overlay), var(--overlay)),
+      url("./assets/images/S2_Stage_Shellendorf_Institute_big.webp") center;
+    background-size: cover;
+  }
 }

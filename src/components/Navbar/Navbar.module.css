@@ -2,6 +2,8 @@
   display: flex;
   flex-wrap: wrap;
   padding-top: 0.5rem;
+  max-width: 62.5rem;
+  margin: 0 auto;
 }
 
 .listItemBig {
@@ -27,6 +29,10 @@
   padding-bottom: 1rem;
 }
 
+.nestedListItem:first-child {
+  margin-left: auto;
+}
+
 .navLink {
   font-size: 1.125rem;
 }
@@ -40,4 +46,32 @@
   composes: navLink;
   font-weight: 600;
   border-bottom: 0.25rem solid #f7f7f7;
+}
+
+@media (min-width: 768px) {
+  .list {
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+
+  .listItemBig {
+    padding-bottom: 1rem;
+    text-align: left;
+  }
+
+  .linkBig {
+    font-size: 2rem;
+  }
+
+  .nestedList {
+    gap: 1.5rem;
+  }
+
+  .navLink {
+    font-size: 1.5rem;
+  }
+
+  .nestedListItem {
+    flex-basis: auto;
+  }
 }

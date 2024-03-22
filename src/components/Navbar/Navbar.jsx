@@ -4,7 +4,7 @@ import styles from "./Navbar.module.css";
 
 function Navbar({ amount }) {
   return (
-    <nav className={styles.nav}>
+    <nav>
       <ul className={styles.list}>
         <li className={styles.listItemBig}>
           <Link className={styles.linkBig} to="/">
