@@ -1,6 +1,7 @@
 import ItemAmount from "../../components/ItemAmount/ItemAmount";
 import ItemCard from "../../components/ItemCard/ItemCard";
 import { Link, useOutletContext } from "react-router-dom";
+import styles from "./Cart.module.css";
 
 function Cart() {
   const { cart, changeCartQuantity, removeItem } = useOutletContext();
@@ -11,7 +12,7 @@ function Cart() {
 
   return (
     <>
-      <h1>Your Cart</h1>
+      <h1 className={styles.title}>Your Cart</h1>
       {cart.length > 0 ? (
         <div>
           {cart.map((item) => (
@@ -26,13 +27,18 @@ function Cart() {
                   amount={item.quantity}
                   changeQuantity={(num) => changeCartQuantity(item.id, num)}
                 />
-                <button onClick={() => removeItem(item.id)}>Remove</button>
+                <button
+                  className={styles.remove}
+                  onClick={() => removeItem(item.id)}
+                >
+                  Remove
+                </button>
               </div>
             </div>
           ))}
           <p>Subtotal:</p>
           <p>${priceTotal.toFixed(2)}</p>
-          <button>Checkout</button>
+          <button className={styles.checkout}>Checkout</button>
         </div>
       ) : (
         <>
@@ -40,7 +46,9 @@ function Cart() {
             Your cart is empty! Click below to visit our shop and view our
             products!
           </p>
-          <Link to="/shop">Shop</Link>
+          <Link className={styles.shopBtn} to="/shop">
+            Shop
+          </Link>
         </>
       )}
     </>

@@ -1,0 +1,22 @@
+.title {
+  composes: title from "../Home/Home.module.css";
+}
+
+.shopBtn {
+  composes: ctaBtn from "../Home/Home.module.css";
+  margin-top: 1rem;
+}
+
+.remove {
+  composes: btn from "../../components/CartModal/CartModal.module.css";
+  background-color: #ff1313 !important;
+  margin-bottom: 2.25rem;
+}
+
+.remove:hover {
+  background-color: #ff6060 !important;
+}
+
+.checkout {
+  composes: btn from "../../components/CartModal/CartModal.module.css";
+}
