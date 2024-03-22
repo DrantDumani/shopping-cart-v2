@@ -17,3 +17,17 @@
 .itemPrice {
   padding-top: 1rem;
 }
+
+.cartBtn {
+  width: 100%;
+  background-color: #faa773;
+  font-family: inherit;
+  padding: 4px 0;
+  cursor: pointer;
+  border: 2px solid #000;
+  border-radius: 4px;
+}
+
+.cartBtn:hover {
+  background-color: #facdb2;
+}

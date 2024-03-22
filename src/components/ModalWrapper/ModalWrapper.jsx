@@ -1,10 +1,13 @@
 import PropTypes from "prop-types";
+import styles from "./ModalWrapper.module.css";
 
 function ModalWrapper({ toggleModal, children }) {
   return (
-    <div>
-      <div>
-        <button onClick={toggleModal}>X</button>
+    <div className={styles.modalWrap}>
+      <div className={styles.modal}>
+        <button className={styles.btn} onClick={toggleModal}>
+          X
+        </button>
         {children}
       </div>
     </div>

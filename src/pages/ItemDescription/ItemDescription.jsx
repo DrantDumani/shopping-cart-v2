@@ -40,7 +40,9 @@ function ItemDescription() {
       <p className={styles.itemPrice}>{`$${itemData.price.toFixed(2)}`}</p>
 
       <ItemAmount amount={quantity} changeQuantity={changeQuantity} />
-      <button onClick={handleClick}>Add to Cart</button>
+      <button className={styles.cartBtn} onClick={handleClick}>
+        Add to Cart
+      </button>
       {showModal && (
         <ModalWrapper toggleModal={setShowModal}>
           <CartModal itemName={itemData.title} />

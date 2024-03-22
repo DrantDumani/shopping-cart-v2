@@ -1,0 +1,18 @@
+.flex {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 1rem;
+}
+
+.btn {
+  cursor: pointer;
+  width: 5rem;
+  border: 1px solid #000;
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: #00e64d;
+}
+
+.btn:hover {
+  background-color: #28f76d;
+}
