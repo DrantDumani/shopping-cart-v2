@@ -28,11 +28,11 @@ function Cart() {
                 />
                 <button onClick={() => removeItem(item.id)}>Remove</button>
               </div>
-              <p>Subtotal:</p>
-              <p>{priceTotal}</p>
-              <button>Checkout</button>
             </div>
           ))}
+          <p>Subtotal:</p>
+          <p>{priceTotal}</p>
+          <button>Checkout</button>
         </div>
       ) : (
         <>
