@@ -31,7 +31,7 @@ function Cart() {
             </div>
           ))}
           <p>Subtotal:</p>
-          <p>{priceTotal}</p>
+          <p>${priceTotal.toFixed(2)}</p>
           <button>Checkout</button>
         </div>
       ) : (
