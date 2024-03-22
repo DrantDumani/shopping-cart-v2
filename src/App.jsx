@@ -10,8 +10,16 @@ function App() {
   const itemAmount = cart.reduce((total, el) => total + el.quantity, 0);
 
   const addToCart = (obj, num) => {
-    const newItem = { ...obj, quantity: num };
-    setCart((c) => c.concat(newItem));
+    const inCart = cart.find((item) => item.id === obj.id);
+    if (!inCart) {
+      const newItem = { ...obj, quantity: num };
+      setCart((c) => c.concat(newItem));
+    } else
+      setCart((c) =>
+        c.map((item) =>
+          item.id === obj.id ? { ...obj, quantity: num + item.quantity } : item
+        )
+      );
   };
 
   const changeCartQuantity = (id, num = 1) => {
