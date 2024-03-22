@@ -4,6 +4,7 @@ import ItemAmount from "../../components/ItemAmount/ItemAmount";
 import CartModal from "../../components/CartModal/CartModal";
 import ModalWrapper from "../../components/ModalWrapper/ModalWrapper";
 import useModal from "../../hooks/useModal";
+import styles from "./ItemDescription.module.css";
 
 export const loader = async ({ params }) => {
   const resp = await fetch(
@@ -33,10 +34,10 @@ function ItemDescription() {
 
   return (
     <div>
-      <h1>{itemData.title}</h1>
-      <img src={itemData.image} alt="" />
+      <h1 className={styles.title}>{itemData.title}</h1>
+      <img className={styles.itemImg} src={itemData.image} alt="" />
       <p>{itemData.description}</p>
-      <p>{`$${itemData.price.toFixed(2)}`}</p>
+      <p className={styles.itemPrice}>{`$${itemData.price.toFixed(2)}`}</p>
 
       <ItemAmount amount={quantity} changeQuantity={changeQuantity} />
       <button onClick={handleClick}>Add to Cart</button>
