@@ -1,9 +1,10 @@
 import PropTypes from "prop-types";
+import styles from "./ItemCard.module.css";
 
 function ItemCard({ name, imgLink, price }) {
   return (
     <div>
-      <img src={imgLink} alt="" />
+      <img className={styles.cardImg} src={imgLink} alt="" />
       <h3>{name}</h3>
       <p>${price.toFixed(2)}</p>
     </div>
