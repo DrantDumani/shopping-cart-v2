@@ -62,7 +62,7 @@ function App() {
         <footer className={styles.footer}>
           <p>
             Created by Darnell.{" "}
-            <a href="#">
+            <a href="https://github.com/DrantDumani/shopping-cart-v2">
               Github repo <Icon />
             </a>
           </p>
