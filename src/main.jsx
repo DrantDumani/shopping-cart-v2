@@ -1,48 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App.jsx";
+import routes from "./routes.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Home from "./pages/Home/Home.jsx";
-import Shop, { loader as shopLoader } from "./pages/Shop/Shop.jsx";
-import Cart from "./pages/Cart/Cart.jsx";
-import ItemDescription, {
-  loader as itemLoader,
-} from "./pages/ItemDescription/ItemDescription.jsx";
-import Error from "./pages/Error/Error.jsx";
 import "./index.css";
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <App />,
-    errorElement: <Error />,
-    children: [
-      {
-        errorElement: <Error />,
-        children: [
-          {
-            element: <Home />,
-            index: true,
-          },
-          {
-            path: "/shop",
-            element: <Shop />,
-            loader: shopLoader,
-          },
-          {
-            path: "/shop/:itemId",
-            element: <ItemDescription />,
-            loader: itemLoader,
-          },
-          {
-            path: "/cart",
-            element: <Cart />,
-          },
-        ],
-      },
-    ],
-  },
-]);
+const router = createBrowserRouter(routes);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
