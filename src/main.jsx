@@ -8,30 +8,37 @@ import Cart from "./pages/Cart/Cart.jsx";
 import ItemDescription, {
   loader as itemLoader,
 } from "./pages/ItemDescription/ItemDescription.jsx";
+import Error from "./pages/Error/Error.jsx";
 import "./index.css";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+    errorElement: <Error />,
     children: [
       {
-        element: <Home />,
-        index: true,
-      },
-      {
-        path: "/shop",
-        element: <Shop />,
-        loader: shopLoader,
-      },
-      {
-        path: "/shop/:itemId",
-        element: <ItemDescription />,
-        loader: itemLoader,
-      },
-      {
-        path: "/cart",
-        element: <Cart />,
+        errorElement: <Error />,
+        children: [
+          {
+            element: <Home />,
+            index: true,
+          },
+          {
+            path: "/shop",
+            element: <Shop />,
+            loader: shopLoader,
+          },
+          {
+            path: "/shop/:itemId",
+            element: <ItemDescription />,
+            loader: itemLoader,
+          },
+          {
+            path: "/cart",
+            element: <Cart />,
+          },
+        ],
       },
     ],
   },
