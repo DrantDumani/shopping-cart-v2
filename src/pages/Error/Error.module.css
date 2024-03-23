@@ -1,0 +1,7 @@
+.error {
+  padding: 1rem 0;
+}
+
+.btn {
+  composes: ctaBtn from "../Home/Home.module.css";
+}

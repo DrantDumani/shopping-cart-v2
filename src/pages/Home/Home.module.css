@@ -1,0 +1,30 @@
+@value titleSize from "../../styles/vars.module.css";
+@value titlePadTop from "../../styles/vars.module.css";
+@value titlePadBot from "../../styles/vars.module.css";
+
+.homepage {
+  height: 100%;
+}
+
+.title {
+  font-size: titleSize;
+  padding-top: titlePadTop;
+  padding-bottom: titlePadBot;
+}
+
+.ctaBtn {
+  background-color: #67faff;
+  padding: 0.3125rem;
+  border: 1px solid #000;
+  border-radius: 0.25rem;
+  display: block;
+  text-align: center;
+  width: 100%;
+  max-width: 20rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ctaBtn:hover {
+  background-color: #b9fdff;
+}

@@ -1,0 +1,31 @@
+@font-face {
+  font-family: "Splatoon";
+  src: url("./assets/fonts/Splatoon2.otf") format("opentype");
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Splatoon", "Courier New", Courier, monospace;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}

@@ -1,0 +1,37 @@
+@value titleSize from "../../styles/vars.module.css";
+@value titlePadTop from "../../styles/vars.module.css";
+@value titlePadBot from "../../styles/vars.module.css";
+
+.title {
+  font-size: titleSize;
+  padding-top: titlePadTop;
+  padding-bottom: titlePadBot;
+}
+
+.itemImg {
+  width: 100%;
+  height: 18.75rem;
+  object-fit: contain;
+}
+
+.itemPrice {
+  padding-top: 1rem;
+}
+
+.cartBtn {
+  width: 100%;
+  background-color: #faa773;
+  font-family: inherit;
+  padding: 4px 0;
+  cursor: pointer;
+  border: 2px solid #000;
+  border-radius: 4px;
+  max-width: 20rem;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.cartBtn:hover {
+  background-color: #facdb2;
+}
